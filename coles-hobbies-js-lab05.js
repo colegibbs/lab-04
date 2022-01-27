@@ -15,9 +15,6 @@ function promptUserForHobby() {
         else if(hobby === "reading"){
             alert('Cole also likes ' + hobby + '. Read on to learn some more!');
         }
-        else if(hobby === ''){
-            alert('Please enter a valid hobby!');
-        }
         else{
            alert('You don\'t have any of the same hobbies as Cole, but you should read on to learn more!');
         }
@@ -36,8 +33,28 @@ function promptUserForExitMessage() {
     document.write('<h3>You could also check out my </h3><a href ="https://github.com/colegibbs"><h3>Github</h3></a>');
 }
 
+function promptForPictures(message) {
+    let picAmount = prompt(message);
+    let defaultMessage = 'How awesome is Cole on a scale of 1 to 5?'
+    let error = 'Please enter a number!';
+    if(picAmount === '') {
+        promptForPictures(error + ' ' + defaultMessage);
+    }
+    let picAmount = Number(picAmount);
+    if(isNaN(picAmount)){
+        promptForPictures(error + ' ' + defaultMessage);
+    }
+    else {
+        for(let i = 0; i < picAmount - 1; i++) {
+            document.write('<img src="star.jpeg">');
+        }
+    }
+}
+
 promptUserForExitMessage();
 promptUserForHobby();
+//let picMessage = 'How awesome is Cole on a scale of 1 to 5?';
+//promptForPictures(picMessage);
 
 //let firstName = prompt('What is your name?');
 //let hobby = prompt('What is your favorite hobby?').toLowerCase().trim();
