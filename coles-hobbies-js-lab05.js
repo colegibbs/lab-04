@@ -1,7 +1,7 @@
 function promptUserForHobby() {
     let confirm = window.confirm('Would you like to learn about Cole\'s hobbies?');
     let hobby = prompt('What is your favorite hobby?').toLowerCase().trim();
-
+    console.log("hobby:", hobby);
     if(isNaN(hobby) !== true){
         let numberErrorMessage = "Please type in your favorite hobby. Not a number!";
         alert(numberErrorMessage);
@@ -14,6 +14,9 @@ function promptUserForHobby() {
         }
         else if(hobby === "reading"){
             alert('Cole also likes ' + hobby + '. Read on to learn some more!');
+        }
+        else if(hobby === ''){
+            alert('Please enter a valid hobby!');
         }
         else{
            alert('You don\'t have any of the same hobbies as Cole, but you should read on to learn more!');
