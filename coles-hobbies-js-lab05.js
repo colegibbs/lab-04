@@ -6,6 +6,9 @@ function promptUserForHobby() {
     if(hobby === null){
         promptUserForHobby();
     }
+    else if (hobby === '') {
+        promptUserForHobby();
+    }
     else if(isNaN(hobby) !== true){
         let numberErrorMessage = "Please type in your favorite hobby. Not a number!";
         alert(numberErrorMessage);
@@ -60,7 +63,7 @@ function promptForPictures(message) {
     else {
         document.write('<h3>You get ' + amount + " stars for making Cole feel AWESOME!!!");
         for(let i = 0; i < amount; i++) {
-            document.write('<img id="star" src="/images/star.jpeg">');
+            document.write('<img id="star" src="/images/star.jpeg" alt="star">');
         }
     }
 }
