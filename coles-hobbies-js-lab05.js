@@ -1,12 +1,16 @@
 function promptUserForHobby() {
     let confirm = window.confirm('Would you like to learn about Cole\'s hobbies?');
-    let hobby = prompt('What is your favorite hobby?').toLowerCase().trim();
+    let hobby = prompt('What is your favorite hobby?')
     console.log("hobby:", hobby);
-    if(isNaN(hobby) !== true){
+
+    if(hobby === null){
+        promptUserForHobby();
+    }
+    else if(isNaN(hobby) !== true){
         let numberErrorMessage = "Please type in your favorite hobby. Not a number!";
         alert(numberErrorMessage);
         promptUserForHobby();
-    }
+    } 
 
     if(confirm){
         if(hobby === "jiu jitsu"){
@@ -26,6 +30,12 @@ function promptUserForHobby() {
 
 function promptUserForExitMessage() {
     let firstName = prompt('What is your name?');
+    console.log("firstName:", firstName);
+
+    if(firstName === null){
+        promptUserForExitMessage();
+    }
+
     let firstNameArr = firstName.split('');
     firstNameArr[0] = firstNameArr[0].toUpperCase();
     firstName = firstNameArr.join('');
@@ -33,23 +43,27 @@ function promptUserForExitMessage() {
     document.write('<h3>You could also check out my </h3><a href ="https://github.com/colegibbs"><h3>Github</h3></a>');
 }
 
-/*function promptForPictures(message) {
-    let amount = prompt(message);
+function promptForPictures(message) {
+    let answer = prompt(message);
     let defaultMessage = 'How awesome is Cole on a scale of 1 to 5?';
-    let error = 'Please enter a number!';
-    if(amount === '') {
+    let error = 'Please enter a valid number!';
+    if(answer === '') {
         promptForPictures(error + ' ' + defaultMessage);
     }
-    let amount = Number(amount);
-    if(isNaN(amount)){
+    let amount = Number(answer);
+    if(isNaN(amount)) {
+        promptForPictures(error + ' ' + defaultMessage);
+    }
+    else if(amount < 1 || amount > 5) {
         promptForPictures(error + ' ' + defaultMessage);
     }
     else {
-        for(let i = 0; i < amount - 1; i++) {
-            document.write('<img src="star.jpeg">');
+        document.write('<h3>You get ' + amount + " stars for making Cole feel AWESOME!!!");
+        for(let i = 0; i < amount; i++) {
+            document.write('<img id="star" src="/images/star.jpeg">');
         }
     }
-}*/
+}
 
 promptUserForExitMessage();
 promptUserForHobby();
