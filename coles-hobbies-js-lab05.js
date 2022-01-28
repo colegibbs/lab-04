@@ -33,19 +33,19 @@ function promptUserForExitMessage() {
     document.write('<h3>You could also check out my </h3><a href ="https://github.com/colegibbs"><h3>Github</h3></a>');
 }
 
-function promptForPictures() {
-    let picAmount = prompt('How awesome is Cole on a scale of 1 to 5?');
+function promptForPictures(message) {
+    let amount = prompt(message);
     let defaultMessage = 'How awesome is Cole on a scale of 1 to 5?';
     let error = 'Please enter a number!';
-    if(picAmount === '') {
+    if(amount === '') {
         promptForPictures(error + ' ' + defaultMessage);
     }
-    let picAmount = Number(picAmount);
-    if(isNaN(picAmount)){
+    let amount = Number(amount);
+    if(isNaN(amount)){
         promptForPictures(error + ' ' + defaultMessage);
     }
     else {
-        for(let i = 0; i < picAmount - 1; i++) {
+        for(let i = 0; i < amount - 1; i++) {
             document.write('<img src="star.jpeg">');
         }
     }
@@ -54,4 +54,4 @@ function promptForPictures() {
 promptUserForExitMessage();
 promptUserForHobby();
 let picMessage = 'How awesome is Cole on a scale of 1 to 5?'
-promptForPictures();
+promptForPictures(picMessage);
