@@ -33,7 +33,7 @@ function promptUserForExitMessage() {
     document.write('<h3>You could also check out my </h3><a href ="https://github.com/colegibbs"><h3>Github</h3></a>');
 }
 
-function promptForPictures(message) {
+/*function promptForPictures(message) {
     let amount = prompt(message);
     let defaultMessage = 'How awesome is Cole on a scale of 1 to 5?';
     let error = 'Please enter a number!';
@@ -49,7 +49,7 @@ function promptForPictures(message) {
             document.write('<img src="star.jpeg">');
         }
     }
-}
+}*/
 
 promptUserForExitMessage();
 promptUserForHobby();
