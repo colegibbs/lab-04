@@ -62,7 +62,7 @@ function promptForPictures(message) {
     }
     else {
         document.write('<h3>You get ' + amount + " stars for making Cole feel AWESOME!!!");
-        for(let i = 0; i < amount; i++) {
+        for(let i = 0; i < amount - 1; i++) {
             document.write('<img id="star" src="./images/star.jpeg" alt="star">');
         }
     }
